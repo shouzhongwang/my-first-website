@@ -1,5 +1,33 @@
 <!DOCTYPE html>
 <html>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    text-align: center;
+    padding-top: 50px;
+  }
+
+  input {
+    padding: 8px;
+    margin: 5px;
+    width: 120px;
+  }
+
+  button {
+    padding: 8px 15px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  #result {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+</style>
+
 <head>
   <meta charset="utf-8">
   <title>Calculator</title>
@@ -19,36 +47,38 @@
   <button onclick="divide()">÷</button>
 
   <h2>Result:</h2>
-  <p id="result">0</p >
+  <p id="result">Resault: 0</p >
 
   <script>
     function add() {
       let a = Number(document.getElementById("num1").value);
       let b = Number(document.getElementById("num2").value);
-      document.getElementById("result").innerText = a + b;
+      document.getElementById("result").innerText = "Reasult: " + (a + b);
     }
 
     function subtract() {
       let a = Number(document.getElementById("num1").value);
       let b = Number(document.getElementById("num2").value);
-      document.getElementById("result").innerText = a - b;
+      document.getElementById("result").innerText = "Reasult: " + (a - b);
     }
 
     function multiply() {
       let a = Number(document.getElementById("num1").value);
       let b = Number(document.getElementById("num2").value);
-      document.getElementById("result").innerText = a * b;
+      document.getElementById("result").innerText = "Reasult: " + (a * b);
     }
 
     function divide() {
       let a = Number(document.getElementById("num1").value);
       let b = Number(document.getElementById("num2").value);
-      if (b === 0) {
-        document.getElementById("result").innerText = "Error";
-      } else {
-        document.getElementById("result").innerText = a / b;
-      }
-    }
+
+  if (b === 0) {
+      document.getElementById("result").innerText = "Error: Cannot divide by zero";
+      return;
+  }
+
+      document.getElementById("result").innerText = "Result: " + (a / b);
+}
   </script>
 </body>
 </html>
